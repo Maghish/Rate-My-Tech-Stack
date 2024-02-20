@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
-
-const techModel = require("../models/techModel");
+import mongoose from "mongoose";
+import techModel from "../models/techModel.js";
 
 async function getAllTech(req, res) {
   try {
@@ -22,7 +21,5 @@ async function getTechRating(req, res) {
   }
 }
 
-module.exports = {
-  getAllTech,
-  getTechRating,
-};
+
+export {getAllTech, getTechRating}

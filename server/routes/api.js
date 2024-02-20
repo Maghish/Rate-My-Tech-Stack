@@ -1,10 +1,9 @@
-const express = require('express');
+import express from 'express';
+import { getAllTech, getTechRating } from '../controllers/apiController.js';
 
 const router = express.Router();
-
-const { getTechRating, getAllTech } = require('../controllers/apiController');
 
 router.get('/getalltech', getAllTech);
 router.post('/gettechrating', getTechRating);
 
-module.exports = router;
+export default router;
