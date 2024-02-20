@@ -1,11 +1,21 @@
 import "../css/index.css";
+import { useRoutes } from "react-router-dom";
+import Home from "../pages/Home.jsx";
 
 function App() {
-  return (
-    <>
-      <p className="text-7xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline-block text-transparent bg-clip-text">Hello World! Welcome to Rate My Tech Stack!!</p>
-    </>
-  );
+  const routes = useRoutes([
+    {
+      path: "/",
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+      ],
+    },
+  ]);
+
+  return <>{routes}</>;
 }
 
 export default App;
