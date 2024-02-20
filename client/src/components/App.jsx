@@ -3,7 +3,7 @@ import { useRoutes } from "react-router-dom";
 import Home from "../pages/Home.jsx";
 
 function App() {
-  const routes = useRoutes([
+  let routes = useRoutes([
     {
       path: "/",
       children: [
@@ -15,7 +15,11 @@ function App() {
     },
   ]);
 
-  return <>{routes}</>;
+  return (
+    <div>
+      {routes}
+    </div>
+  );
 }
 
 export default App;
