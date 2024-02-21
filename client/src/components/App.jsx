@@ -16,9 +16,9 @@ function App() {
   ]);
 
   return (
-    <div>
+    <>
       {routes}
-    </div>
+    </>
   );
 }
 
