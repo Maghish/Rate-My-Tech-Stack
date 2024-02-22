@@ -10,6 +10,17 @@ async function getAllTech(req, res) {
   }
 }
 
+async function getTechThroughField(req, res) {
+  const { field } = req.body;
+
+  try {
+    const tech = await techModel.find({ field: field });
+    res.status(200).json(tech);
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
+}
+
 async function getTechRating(req, res) {
   const { name, field } = req.body;
 
@@ -21,4 +32,4 @@ async function getTechRating(req, res) {
   }
 }
 
-export { getAllTech, getTechRating };
+export { getAllTech, getTechRating, getTechThroughField };
