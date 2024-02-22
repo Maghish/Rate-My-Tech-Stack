@@ -3,6 +3,7 @@ import { FaCaretUp } from "react-icons/fa";
 
 function InputMenu(props) {
   const [displayField, setDisplayField] = useState(null);
+  const [menuListOpen, setMenuListOpen] = useState(false);
 
   useEffect(() => {
     if (props.field === "frontend") {
@@ -35,16 +36,28 @@ function InputMenu(props) {
   }, []);
 
   return (
-    <>
+    <div className="relative">
       <div className="flex flex-row w-[552px] h-[62px] bg-[#EBE8E8] py-[12px] px-[26px] rounded-2xl">
         <input
           type="text"
-          className="w-full outline-none bg-[#EBE8E8] placeholder:text-2xl"
+          className="w-full outline-none bg-[#EBE8E8] text-xl placeholder:text-xl placeholder:text-[#B5B5B5]"
           placeholder={displayField}
         ></input>
-        <FaCaretUp className="self-center !max-w-fit !max-h-fit" />
+        <FaCaretUp
+          className={`ml-2 self-center !max-w-fit !max-h-fit !cursor-pointer ${
+            menuListOpen ? "transform -rotate-180" : ""
+          }`}
+          onClick={() => {
+            menuListOpen ? setMenuListOpen(false) : setMenuListOpen(true);
+          }}
+        />
       </div>
-    </>
+
+      <div
+        className={`absolute top-[62px] z-20 bg-[#EBE8E8] w-[552px] h-auto min-h-[62px] rounded-b-2xl `}
+        id={`${props.field}-menuList`}
+      ></div>
+    </div>
   );
 }
 
