@@ -21,5 +21,4 @@ async function getTechRating(req, res) {
   }
 }
 
-
-export {getAllTech, getTechRating}
+export { getAllTech, getTechRating };
