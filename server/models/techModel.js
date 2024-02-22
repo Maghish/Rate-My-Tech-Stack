@@ -1,5 +1,3 @@
-/* This code snippet is defining a Mongoose schema for a collection named "Tech" in a MongoDB database.
-Here's a breakdown of what each part of the code is doing: */
 import { Decimal128 } from "mongodb";
 import mongoose from "mongoose";
 
