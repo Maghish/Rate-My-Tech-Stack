@@ -3,9 +3,9 @@
   "outputDirectory": "client/dist",
   "framework": "vite",
   "rewrites": [
-      {
-          "source": "/server/(.*)",
-          "destination": "/server/server.js"
-      }
+    {
+      "source": "/server/(.*)",
+      "destination": "/server/server.js"
+    }
   ]
 }
