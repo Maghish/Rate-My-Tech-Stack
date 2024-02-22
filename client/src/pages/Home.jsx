@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import InputMenu from "../components/InputMenu";
 import axios from "axios";
 
 function Home() {
@@ -64,7 +65,23 @@ function Home() {
   return (
     <div className="w-full min-h-screen flex flex-col items-center p-14">
       <p className="text-5xl inter-bold ">Rate My Tech Stack</p>
-      <div className="grid grid-cols-2 gap-40" id="body"></div>
+      <div className="grid grid-cols-2 mt-[90px] gap-x-40 gap-y-7" id="body">
+        <InputMenu field="frontend" techs={allFrontend} />
+        <InputMenu field="style" techs={allStyle} />
+        <InputMenu field="backendFramework" techs={allBackendFramework} />
+        <InputMenu field="database" techs={allDatabase} />
+        <InputMenu field="api" techs={allAPI} />
+        <InputMenu
+          field="cloudComputingPlatform"
+          techs={allCloudComputingPlatform}
+        />
+        <InputMenu
+          field="containerizationPlatform"
+          techs={allContainerizationPlatform}
+        />
+        <InputMenu field="deployment" techs={allDeployment} />
+        <InputMenu field="other" techs={allOther} />
+      </div>
     </div>
   );
 }
