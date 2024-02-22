@@ -11,9 +11,9 @@ async function getAllTech(req, res) {
 }
 
 async function getTechThroughField(req, res) {
-  const { field } = req.body;
-
   try {
+    const { field } = req.body;
+
     const tech = await techModel.find({ field: field });
     res.status(200).json(tech);
   } catch (error) {
@@ -22,9 +22,9 @@ async function getTechThroughField(req, res) {
 }
 
 async function getTechRating(req, res) {
-  const { name, field } = req.body;
-
   try {
+    const { name, field } = req.body;
+
     const tech = await techModel.find({ name: name, field: field });
     res.status(200).json(tech);
   } catch (error) {
