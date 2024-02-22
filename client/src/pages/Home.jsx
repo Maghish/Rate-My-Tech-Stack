@@ -20,7 +20,33 @@ function Home() {
       axios
         .post("/api/gettechthroughfield", { field: field })
         .then((response) => {
-          console.log(response);
+          if (field === "frontend") {
+            setAllFrontend(response.data);
+          }
+          if (field === "style") {
+            setAllStyle(response.data);
+          }
+          if (field === "backendFramework") {
+            setAllBackendFramework(response.data);
+          }
+          if (field === "database") {
+            setAllDatabase(response.data);
+          }
+          if (field === "api") {
+            setAllAPI(response.data);
+          }
+          if (field === "cloudComputingPlatform") {
+            setAllCloudComputingPlatform(response.data);
+          }
+          if (field === "containerizationPlatform") {
+            setAllContainerizationPlatform(response.data);
+          }
+          if (field === "deployment") {
+            setAllDeployment(response.data);
+          }
+          if (field === "other") {
+            setAllOther(response.data);
+          }
         });
     }
 
