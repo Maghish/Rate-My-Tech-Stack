@@ -42,7 +42,7 @@ function InputMenu(props) {
           className="w-full outline-none bg-[#EBE8E8] placeholder:text-2xl"
           placeholder={displayField}
         ></input>
-        <FaCaretUp />
+        <FaCaretUp className="self-center !max-w-fit !max-h-fit" />
       </div>
     </>
   );
