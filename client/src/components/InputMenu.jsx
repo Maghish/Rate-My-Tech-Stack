@@ -37,7 +37,11 @@ function InputMenu(props) {
 
   return (
     <div className="relative">
-      <div className="flex flex-row w-[552px] h-[62px] bg-[#EBE8E8] py-[12px] px-[26px] rounded-2xl">
+      <div
+        className={`flex flex-row w-[552px] h-[62px] bg-[#EBE8E8] py-[12px] px-[26px] ${
+          menuListOpen ? "rounded-t-2xl" : "rounded-2xl"
+        }`}
+      >
         <input
           type="text"
           className="w-full outline-none bg-[#EBE8E8] text-xl placeholder:text-xl placeholder:text-[#B5B5B5]"
@@ -54,7 +58,9 @@ function InputMenu(props) {
       </div>
 
       <div
-        className={`absolute top-[62px] z-20 bg-[#EBE8E8] w-[552px] h-auto min-h-[62px] rounded-b-2xl `}
+        className={`absolute top-[62px] z-20 bg-[#dedede] w-[552px] h-auto min-h-[62px] rounded-b-2xl ${
+          menuListOpen ? "block" : "hidden"
+        }`}
         id={`${props.field}-menuList`}
       ></div>
     </div>
