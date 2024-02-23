@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaCaretUp } from "react-icons/fa";
+import MenuListComponent from "./MenuListComponent";
 
 function InputMenu(props) {
   const [displayField, setDisplayField] = useState(null);
@@ -46,6 +47,12 @@ function InputMenu(props) {
           type="text"
           className="w-full outline-none bg-[#EBE8E8] text-xl placeholder:text-xl placeholder:text-[#B5B5B5]"
           placeholder={displayField}
+          onFocus={() => {
+            setMenuListOpen(true);
+          }}
+          onBlur={() => {
+            setMenuListOpen(false);
+          }}
         ></input>
         <FaCaretUp
           className={`ml-2 self-center !max-w-fit !max-h-fit !cursor-pointer ${
@@ -58,11 +65,15 @@ function InputMenu(props) {
       </div>
 
       <div
-        className={`absolute top-[62px] z-20 bg-[#dedede] w-[552px] h-auto min-h-[62px] rounded-b-2xl ${
+        className={`absolute top-[62px] z-20 bg-[#dedede] w-[552px] h-auto min-h-[62px] rounded-b-2xl p-6 ${
           menuListOpen ? "block" : "hidden"
         }`}
         id={`${props.field}-menuList`}
-      ></div>
+      >
+        {props.techs.map((value, index) => {
+          return <MenuListComponent key={index} value={value} />;
+        })}
+      </div>
     </div>
   );
 }
