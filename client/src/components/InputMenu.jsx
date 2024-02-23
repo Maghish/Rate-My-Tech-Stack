@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaCaretUp } from "react-icons/fa";
-import MenuListComponent from "./MenuListComponent";
+import MenuList from "./MenuList";
 
 function InputMenu(props) {
   const [displayField, setDisplayField] = useState(null);
@@ -54,6 +54,7 @@ function InputMenu(props) {
             setMenuListOpen(false);
           }}
         ></input>
+
         <FaCaretUp
           className={`ml-2 self-center !max-w-fit !max-h-fit !cursor-pointer ${
             menuListOpen ? "transform -rotate-180" : ""
@@ -65,14 +66,12 @@ function InputMenu(props) {
       </div>
 
       <div
-        className={`absolute top-[62px] z-20 bg-[#dedede] w-[552px] h-auto min-h-[62px] rounded-b-2xl p-6 ${
+        className={`absolute top-[62px] z-20 bg-[#dedede] w-[552px] h-auto min-h-[62px] rounded-b-2xl p-5 ${
           menuListOpen ? "block" : "hidden"
         }`}
         id={`${props.field}-menuList`}
       >
-        {props.techs.map((value, index) => {
-          return <MenuListComponent key={index} value={value} />;
-        })}
+        <MenuList techs={props.techs} />
       </div>
     </div>
   );
