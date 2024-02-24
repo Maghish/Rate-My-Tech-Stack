@@ -2,14 +2,22 @@
   "buildCommand": "cd client && npm install && npm run build",
   "outputDirectory": "client/dist",
   "framework": "vite",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/server/(.*)",
-      "dest": "/server/server.js",
-      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
+      "source": "/server/(.*)",
+      "destination": "/server/server.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/server/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+        }
+      ]
     }
   ]
 }
