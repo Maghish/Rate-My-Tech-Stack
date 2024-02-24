@@ -10,7 +10,8 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    credentials: true,
+    origin: "https://rate-my-tech-stack.vercel.app",
   })
 );
 app.use("/api", apiRoute);
