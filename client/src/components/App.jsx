@@ -3,7 +3,7 @@ import { useRoutes } from "react-router-dom";
 import Home from "../pages/Home.jsx";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:4000/";
+axios.defaults.baseURL = "https://rate-my-tech-stack.onrender.com";
 
 function App() {
   let routes = useRoutes([
