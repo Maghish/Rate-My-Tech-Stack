@@ -4,8 +4,8 @@
   "framework": "vite",
   "routes": [
     {
-      "source": "/server/(.*)",
-      "destination": "/server/server.js",
+      "src": "/server/(.*)",
+      "dest": "/server/server.js",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "*"
