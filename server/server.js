@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: "https://rate-my-tech-stack.vercel.app",
+    origin: "*",
   })
 );
 app.use("/api", apiRoute);
