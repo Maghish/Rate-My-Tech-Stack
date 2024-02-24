@@ -5,13 +5,7 @@
   "rewrites": [
     {
       "source": "/server/(.*)",
-      "destination": "/server/server.js"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/server/(.*)",
-      "dest": "/server/server.js",
+      "destination": "/server/server.js",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "*"
